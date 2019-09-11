@@ -6,6 +6,12 @@ Power packed utilities for maven ⚡
 
 ## Features
 
+- Built for CI-CD 💫
+- No Dependency 😇
+- Cross Platform 🐿️
+
+## Actions
+
 - Update `~/.m2/settings.xml` with artifactory credintials
 - Find and Update `hibernate.cfg.xml`
 - Update dynamically generated swagger/openapi SDK for artificatory publishing
