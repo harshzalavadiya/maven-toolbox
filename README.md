@@ -2,20 +2,11 @@
 
 Power packed utilities for maven ⚡
 
-![demo](https://media.giphy.com/media/VCPVjSPn5FVVLqHmC7/giphy.gif)
-
 ## Features
 
 - Built for CI-CD 💫
 - No Dependency 😇
 - Cross Platform 🐿️
-
-## Actions
-
-- Update `~/.m2/settings.xml` with artifactory credintials
-- Find and Update `hibernate.cfg.xml`
-- Update dynamically generated swagger/openapi SDK for artificatory publishing
-- Update properties file
 
 ## How to use
 
@@ -24,30 +15,55 @@ Power packed utilities for maven ⚡
 - Setup environment variables (for example `export MTPROP_FOO=bar`)
 - Run executable with specific arguements from below
 
-## Documentation
+## Actions
 
-```txt
-usage: main [<flags>] <command> [<args> ...]
+#### `configure-m2`
 
-Commands:
-  help [<command>...]
-    Show help.
+Update `~/.m2/settings.xml` with artifactory credintials
 
-  configure-m2
-    Update '~/.m2/settings.xml'
-
-  configure-sdk
-    Update 'target/sdk/pom.xml'
-
-  configure-hibernate
-    Finds and updates 'hibernate.cfg.xml'
-
-  configure-properties <file> [<prefix>]
-    Update properties file
-      Args:
-      <file>    relative properties file path
-      <prefix>  environment variable prefix (prefix will be stripped with underscore, case insensitive)
+```sh
+export ARTIFACTORY_ENDPOINT=admin
+export ARTIFACTORY_USERNAME=password
+export ARTIFACTORY_URL=http://localhost:8081/artifactory
+./maven-toolbox configure-m2
 ```
+
+#### `configure-sdk`
+
+Update dynamically generated swagger/openapi SDK project for artificatory publishing
+
+```sh
+export ARTIFACTORY_URL=http://localhost:8081/artifactory
+./maven-toolbox configure-sdk
+```
+
+#### `configure-hibernate`
+
+find and update database configuration `hibernate.cfg.xml`
+
+```sh
+export DB_USERNAME="postgres"
+export DB_PASSWORD="postgres123"
+export DB_URL="jdbc:postgresql://localhost:5432/db"
+./maven-toolbox configure-hibernate
+```
+
+#### `configure-properties`
+
+Update properties file
+
+```sh
+export MTPROP_FOO="xyz" # `MTPROP_` is a default prefix
+./maven-toolbox configure-properties path/to/your.properties
+```
+
+<details><summary>Example</summary>
+<p>
+
+![demo](https://media.giphy.com/media/VCPVjSPn5FVVLqHmC7/giphy.gif)
+
+</p>
+</details>
 
 ## Building
 
