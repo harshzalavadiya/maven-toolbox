@@ -6,8 +6,6 @@ import (
 	"os"
 	"regexp"
 	"strings"
-
-	"github.com/jimlawless/cfg"
 )
 
 // DoConfigureProperties updates properties file
@@ -15,8 +13,10 @@ func DoConfigureProperties(filePathPre string, prefix string) {
 
 	cwd, _ := os.Getwd()
 	filePath := cwd + string(os.PathSeparator) + filePathPre
-	props := make(map[string]string)
-	cfg.Load(filePath, props)
+	props, err := Read(filePath, "")
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	fileContents, _ := ioutil.ReadFile(filePath)
 	fileContentsString := string(fileContents)
