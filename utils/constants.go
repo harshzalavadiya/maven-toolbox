@@ -5,6 +5,7 @@ import "os"
 const doneMessage = "✨ Done!"
 
 const m2SettingsXMLPath = string(os.PathSeparator) + ".m2" + string(os.PathSeparator) + "settings.xml"
+const sdkRootPomXMLPath = string(os.PathSeparator) + "pom.xml"
 const sdkPomXMLPath = string(os.PathSeparator) + "target" + string(os.PathSeparator) + "sdk" + string(os.PathSeparator) + "pom.xml"
 const sdkPomTag = "<build>"
 const hibernateFileName = "hibernate.cfg.xml"
@@ -104,7 +105,7 @@ const sdkPomXMLTemplate = `<distributionManagement>
 //Descriptions of commands
 const (
 	DescriptionM2         = `Update '~/.m2/settings.xml'`
-	DescriptionSDK        = `Update 'target/sdk/pom.xml'`
+	DescriptionSDK        = `Update 'pom.xml' and 'target/sdk/pom.xml'`
 	DescriptionHibernate  = `Finds and updates 'hibernate.cfg.xml'`
 	DescriptionProperties = `Update properties file
   Args:

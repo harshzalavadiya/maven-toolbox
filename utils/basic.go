@@ -18,3 +18,9 @@ func replaceHibernateVariable(contents string, key string, value string) string 
 	text := `connection.` + key + `">` + value + `<`
 	return rgxp.ReplaceAllString(contents, text)
 }
+
+func replaceTag(contents string, key string, value string) string {
+	rgxp := regexp.MustCompile(`<` + key + `>.+<`)
+	text := `<` + key + `>` + value + `<`
+	return rgxp.ReplaceAllString(contents, text)
+}
