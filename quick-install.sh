@@ -2,7 +2,7 @@
 
 # This script installs maven-toolbox.
 #
-# Quick install: `curl http://bit.ly/maven-toolbox | bash`
+# Quick install: `curl -L http://bit.ly/maven-toolbox | bash`
 #
 # Acknowledgments: Taken from https://getmic.ro/
 
