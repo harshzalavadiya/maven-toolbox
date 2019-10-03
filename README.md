@@ -10,7 +10,7 @@ Power packed utilities for maven ⚡
 
 ## How to use
 
-- Download platform specific binary release from [here](https://github.com/harshzalavadiya/maven-toolbox/releases)
+- Download platform specific binary release from [here](https://github.com/harshzalavadiya/maven-toolbox/releases) or quick install `curl http://bit.ly/maven-toolbox | bash`
 - Copy executable to root directory
 - Setup environment variables (for example `export MTPROP_FOO=bar`)
 - Run executable with specific arguements from below
