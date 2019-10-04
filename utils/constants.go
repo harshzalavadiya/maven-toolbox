@@ -105,7 +105,8 @@ const sdkPomXMLTemplate = `<distributionManagement>
 //Descriptions of commands
 const (
 	DescriptionM2         = `Update '~/.m2/settings.xml'`
-	DescriptionSDK        = `Update 'pom.xml' and 'target/sdk/pom.xml'`
+	DescriptionPreSDK     = `Update 'pom.xml'`
+	DescriptionSDK        = `Update 'target/sdk/pom.xml'`
 	DescriptionHibernate  = `Finds and updates 'hibernate.cfg.xml'`
 	DescriptionProperties = `Update properties file
   Args:

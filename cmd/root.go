@@ -7,6 +7,7 @@ import (
 
 var (
 	cmdM2         = kingpin.Command("configure-m2", utils.DescriptionM2)
+	cmdPreSDK     = kingpin.Command("configure-pre-sdk", utils.DescriptionPreSDK)
 	cmdSDK        = kingpin.Command("configure-sdk", utils.DescriptionSDK)
 	cmdHibernate  = kingpin.Command("configure-hibernate", utils.DescriptionHibernate)
 	cmdProperties = kingpin.Command("configure-properties", utils.DescriptionProperties)
@@ -22,6 +23,9 @@ func Execute() {
 
 	case cmdM2.FullCommand():
 		utils.DoConfigureM2()
+
+	case cmdPreSDK.FullCommand():
+		utils.DoConfigurePreSDK()
 
 	case cmdSDK.FullCommand():
 		utils.DoConfigureSDK()
