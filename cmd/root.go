@@ -17,7 +17,7 @@ var (
 
 // Execute ...
 func Execute() {
-	kingpin.Version("1.1.4")
+	kingpin.Version("1.1.5")
 
 	switch kingpin.Parse() {
 
