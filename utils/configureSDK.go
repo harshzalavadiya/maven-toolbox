@@ -29,8 +29,6 @@ func DoConfigureSDK() {
 	updatedRootFileContents := replaceTag(string(rootFileContents), "schemes", LookupEnv("MTPROP_SCHEMES", "httpx"))
 	updatedRootFileContents = replaceTag(updatedRootFileContents, "host", LookupEnv("MTPROP_HOST", "localhostx"))
 
-	fmt.Println(string(rootFileContents))
-
 	ioutil.WriteFile(rootFilePath, []byte(updatedRootFileContents), 0777)
 
 	fmt.Println("🗸 Updated " + filePath)
