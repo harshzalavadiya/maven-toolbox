@@ -36,7 +36,9 @@ func DoConfigureProperties(filePathPre string, prefix string) {
 func findInProperties(props map[string]string, e string, prefix string) (bool, string, string) {
 	env := strings.Split(e, "=")
 	for k := range props {
-		if strings.ToLower(env[0]) == strings.ToLower(prefix+"_"+k) {
+		envProp := strings.ToLower(env[0])
+		fileProp := strings.ToLower(prefix + "_" + strings.Replace(k, ".", "_", -1))
+		if envProp == fileProp {
 			return true, k, env[1]
 		}
 	}
