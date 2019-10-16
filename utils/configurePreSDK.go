@@ -14,6 +14,7 @@ func DoConfigurePreSDK() {
 	rootFileContents, _ := ioutil.ReadFile(rootFilePath)
 	updatedRootFileContents := replaceTag(string(rootFileContents), "schemes", LookupEnv("MTPROP_SCHEMES", "httpx"))
 	updatedRootFileContents = replaceTag(updatedRootFileContents, "host", LookupEnv("MTPROP_HOST", "localhostx"))
+	updatedRootFileContents = replaceArtifactory(updatedRootFileContents)
 
 	ioutil.WriteFile(rootFilePath, []byte(updatedRootFileContents), 0777)
 

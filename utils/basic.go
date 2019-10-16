@@ -24,3 +24,10 @@ func replaceTag(contents string, key string, value string) string {
 	text := `<` + key + `>` + value + `<`
 	return rgxp.ReplaceAllString(contents, text)
 }
+
+func replaceArtifactory(contents string) string {
+	rgxp := regexp.MustCompile(`<url>http.+/artifactory`)
+	artifactoryURL := LookupEnv(txArtifactoryURL, "http://localhost:8080/artifactory")
+	text := `<url>` + artifactoryURL
+	return rgxp.ReplaceAllString(contents, text)
+}
