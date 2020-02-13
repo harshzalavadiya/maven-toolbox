@@ -46,7 +46,7 @@ func findInProperties(props map[string]string, e string, prefix string) (bool, s
 }
 
 func updateProperty(contents string, key string, value string) string {
-	rgxp := regexp.MustCompile(`(?m)` + key + `=.+`)
+	rgxp := regexp.MustCompile(`(?m)^` + key + `=.+`)
 	text := key + `=` + value
 	return rgxp.ReplaceAllString(contents, text)
 }
