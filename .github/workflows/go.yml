@@ -32,4 +32,4 @@ jobs:
         env:
           GHR_COMPRESS: xz
           GHR_PATH: dist/
-          GITHUB_TOKEN: ${{ secrets.GITHUB_RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
