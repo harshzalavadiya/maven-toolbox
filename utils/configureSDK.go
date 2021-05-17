@@ -5,13 +5,23 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strings"
 
 	"github.com/hoisie/mustache"
 )
 
 // DoConfigureSDK compiles settings.xml template and overrides file
 func DoConfigureSDK() {
-	data := mustache.Render(sdkPomXMLTemplate, map[string]string{
+
+	template := sdkPomXMLTemplate
+
+	// compatibility: from artifactory to reposilite
+	if LookupEnv(txArtifactoryCompat, "0") == "1" {
+		template = strings.ReplaceAll(template, "-local", "")
+		fmt.Println("🗸 updated repository manager compatibility")
+	}
+
+	data := mustache.Render(template, map[string]string{
 		txArtifactoryURL: LookupEnv(txArtifactoryURL, "http://localhost:8080/artifactory"),
 	})
 

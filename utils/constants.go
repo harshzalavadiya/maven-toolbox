@@ -14,6 +14,7 @@ const (
 	txArtifactoryUsername = "ARTIFACTORY_USERNAME"
 	txArtifactoryPassword = "ARTIFACTORY_PASSWORD"
 	txArtifactoryURL      = "ARTIFACTORY_URL"
+	txArtifactoryCompat   = "ARTIFACTORY_COMPAT"
 )
 
 const settingsXMLTemplate = `<?xml version="1.0" encoding="UTF-8" ?>
