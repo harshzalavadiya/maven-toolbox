@@ -21,5 +21,5 @@ func DoConfigureM2() {
 
 	ioutil.WriteFile(filePath, []byte(data), 0777)
 
-	fmt.Println("🗸 Updated " + filePath)
+	fmt.Println("✅ Updated " + filePath)
 }

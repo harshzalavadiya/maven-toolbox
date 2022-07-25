@@ -19,7 +19,7 @@ func DoConfigureHibernate() {
 			updatedFileContents = replaceHibernateVariable(updatedFileContents, "password", LookupEnv("DB_PASSWORD", "postgres123"))
 			updatedFileContents = replaceHibernateVariable(updatedFileContents, "url", LookupEnv("DB_URL", "jdbc:postgresql://localhost:5432/biodiv"))
 			ioutil.WriteFile(path, []byte(updatedFileContents), 0777)
-			fmt.Println(`🗸 Updated ` + path)
+			fmt.Println(`✅ Updated ` + path)
 		}
 		return nil
 	})

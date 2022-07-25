@@ -30,7 +30,7 @@ func DoConfigureProperties(filePathPre string, prefix string) {
 	}
 
 	ioutil.WriteFile(filePath, []byte(fileContentsString), 0777)
-	fmt.Println(`🗸 Updated ` + filePath)
+	fmt.Println(`✅ Updated ` + filePath)
 }
 
 func findInProperties(props map[string]string, e string, prefix string) (bool, string, string) {

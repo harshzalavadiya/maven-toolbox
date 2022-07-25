@@ -20,10 +20,10 @@ func DoConfigurePreSDK() {
 	// compatibility: from artifactory to reposilite
 	if LookupEnv(txArtifactoryCompat, "0") == "1" {
 		updatedRootFileContents = strings.ReplaceAll(updatedRootFileContents, "-local", "")
-		fmt.Println("🗸 updated repository manager compatibility")
+		fmt.Println("✅ updated repository manager compatibility")
 	}
 
 	ioutil.WriteFile(rootFilePath, []byte(updatedRootFileContents), 0777)
 
-	fmt.Println("🗸 Updated " + rootFilePath)
+	fmt.Println("✅ Updated " + rootFilePath)
 }

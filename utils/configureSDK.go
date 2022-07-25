@@ -18,7 +18,7 @@ func DoConfigureSDK() {
 	// compatibility: from artifactory to reposilite
 	if LookupEnv(txArtifactoryCompat, "0") == "1" {
 		template = strings.ReplaceAll(template, "-local", "")
-		fmt.Println("🗸 updated repository manager compatibility")
+		fmt.Println("✅ updated repository manager compatibility")
 	}
 
 	data := mustache.Render(template, map[string]string{
@@ -32,5 +32,5 @@ func DoConfigureSDK() {
 
 	ioutil.WriteFile(filePath, []byte(updatedFileContents), 0777)
 
-	fmt.Println("🗸 Updated " + filePath)
+	fmt.Println("✅ Updated " + filePath)
 }
