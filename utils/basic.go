@@ -26,8 +26,8 @@ func replaceTag(contents string, key string, value string) string {
 }
 
 func replaceArtifactory(contents string) string {
-	rgxp := regexp.MustCompile(`<url>http.+</url>`)
+	rgxp := regexp.MustCompile(`<url>http.+/libs`)
 	artifactoryURL := LookupEnv(txArtifactoryURL, "http://localhost:8200")
-	text := `<url>` + artifactoryURL + `</url>`
+	text := `<url>` + artifactoryURL + `/libs`
 	return rgxp.ReplaceAllString(contents, text)
 }
